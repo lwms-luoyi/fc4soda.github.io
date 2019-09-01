@@ -1,0 +1,98 @@
+<html>
+  <head>
+	<title>GF Journal</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="main.css?lastmod=20190817T184200">
+	<script src="jquery-3.4.1.slim.min.js" defer></script>
+	<script src="main.js" defer></script>
+  </head>
+  <body>
+	<header id="languageSwitcher">
+	  <input type="radio" name="language" id="en" value="en"><label for="en"><a>EN</a></label>
+	  <input type="radio" name="language" id="cn" value="cn"><label for="cn"><a href="main.html">CN</a></label>
+	  <input type="radio" name="language" id="kr" value="kr"><label for="kr"><a>KR</a></label>
+	  <input type="radio" name="language" id="jp" value="jp"><label for="jp"><a>JP</a></label>
+	</header>
+	<main class="main">
+	  <h1 id="title">GF Journal</h1>
+	  <section id="toturial">
+		大概 IE10 以上, Firefox, Chrome 和 Safari 能正常使用。手机浏览器的话需要确保 Javascript 功能开启。
+		<br/>不好使的时候清理浏览器缓存可能好使。
+		<br/>使用中遇到程序错误或有任何建议，请<del>不要</del>到 <a href="https://github.com/fc4soda/gfJournal">这里</a> 反馈。
+	  </section>
+	  <section id="canvasDiv">
+		<container id="canvasContainers" width="850px" height="220px">
+		  <canvas id="resultCanvas" width="850px" height="220px"></canvas>
+		</container>
+		
+		<container id="buttonContainer">
+		  <div id="buttonToggles">
+			<input type="radio" name="displayBtn" checked="checked" id="displayModBtn" value="mod">
+			<label for="displayModBtn">心智升级</label>
+			<input type="radio" name="displayBtn" id="displayPosterBtn" value="poster">
+			<label for="displayPosterBtn">海报</label>
+		  </div>
+		  <div id="message">
+		  </div>
+		  <div id="buttons">
+			<button id="saveConfig" type="button">保存配置</button>
+			<button id="loadConfig" type="button">读取配置</button>
+			<button id="exportPNG" type="button">保存为PNG</button>
+		  </div>
+		</container>
+	  </section>
+	</main>
+	<section id="tabs" class="liteTabs">
+	  <input type="radio" name="headerTabs" checked="checked" id="headerTabGeneral">
+	  <label for="headerTabGeneral">通用选项</label>
+	  <div class="tabContent" id="generalContent">
+		<div>
+		  <span>指挥官
+			<input type="text" id="userName" name="name" maxlength="26" placeholder="NONAME">
+		  </span>
+		  <span>　Lv.
+			<input type="number" id="userLevel" name="level" min="1" max="999" placeholder="1 - 999">
+		  </span>
+		</div><br>
+		<div>所属服务器 <select name="userServer" id="userServer">
+			<option value="unknow" disabled="" selected="">Unknow Server</option>
+			<option value="android0">安卓 0 服</option>
+			<option value="ios0">IOS 0 服</option>
+			<option value="bilibili0">Bilibili 0 服</option>
+			<option value="yingyongbao0">应用宝 0 服</option>
+		</select></div><br>
+		<div>自定义头像: 
+		  <input type="file" id="userAvatar" accept="image/*">
+		  <button type="button" id="userAvatarClear">清除</button>
+		</div>
+	  </div>
+	  
+	  <input type="radio" name="headerTabs" id="headerTabTeam">
+	  <label for="headerTabTeam" id="headerTabTeamLabel">梯队列表</label>
+	  <div class="tabContent" id="teamContent"></div>
+
+	  <input type="radio" name="headerTabs" id="headerTabMod">
+	  <label for="headerTabMod">心智升级</label>
+	  <div class="tabContent" id="modContent">
+		<input type="checkbox" class="gunCheckAll" name="gunModCheckAll" id="gunModCheckAll">
+		<label for="gunModCheckAll" id="gunModCheckAllLabel">全选</label>
+	  </div>
+
+	  <input type="radio" name="headerTabs" id="headerTabPoster">
+	  <label for="headerTabPoster">图鉴进度海报</label>
+	  <div class="tabContent" id="posterContent">
+		<input type="checkbox" class="gunCheckAll" name="gunPosterCheckAll" id="gunPosterCheckAll">
+		<label for="gunPosterCheckAll" id="gunPosterCheckAllLabel">全选</label>
+	  </div>
+
+	  <input type="radio" name="headerTabs" id="headerTabBackground">
+	  <label for="headerTabBackground">选择背景家具</label>
+	  <div class="tabContent" id="backgroundContent">选择背景家具</div>
+
+	  <input type="radio" name="headerTabs" id="headerTabAdjust">
+	  <label for="headerTabAdjust">图片位置微调</label>
+	  <div class="tabContent" id="adjustContent">图片位置微调</div>
+	</section>
+  </body>
+</html>

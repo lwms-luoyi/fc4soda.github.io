@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 	<title id="title" v-cloak>{{ title }}</title>
-  <link rel="shortcut icon" href="/gfbadge/favicon.ico"><link href="/gfbadge/index.css" rel="stylesheet"><link href="/gfbadge/index.18b8ad9a85ed8ccd2ee1.css" rel="stylesheet"></head>
+  <link rel="shortcut icon" href="/gfbadge/favicon.ico"><link href="/gfbadge/index.css" rel="stylesheet"><link href="/gfbadge/index.0afd4457068384a90cc8.css" rel="stylesheet"></head>
   <body>
 	
 	<div id="loading" v-if="show" class="text-center d-flex justify-content-center">
@@ -48,8 +48,8 @@
 		</div>
 		
 		<div id="tabs" class="mt-2 mb-3">
-		  <b-tabs content-class="mt-3" fill>
-			<b-tab :title="$t('tabGeneral.title')" active>
+		  <b-tabs v-model="currentTab" content-class="mt-3" fill>
+			<b-tab :title="$t('tabGeneral.title')">
 
 			  <b-row>
 				<b-col cols=6>
@@ -378,11 +378,11 @@
 		</div>
 
 		<div class="mt-3 py-2 d-flex border-top justify-content-center" id="busuanzi_container_site_pv">{{ $t('ui.visitedCount') }}:&nbsp;<span id="busuanzi_value_site_pv"></span></div>
-		<b-tooltip target="langs" triggers="hover">
-		</b-tooltip>
+		<b-tooltip target="langs" triggers="hover"></b-tooltip>
 	  </b-container>
+	  <div v-cloak class="d-flex fixed-bottom justify-content-end mr-3 mb-1"><b-button id="toTop" class="my-1" variant="primary" @click="scrollToTop(300)">{{ $t('btnToTop') }}</b-button></div>
 	</div>
-  <script type="text/javascript" src="/gfbadge/index.18b8ad9a85ed8ccd2ee1.js"></script></body>
+  <script type="text/javascript" src="/gfbadge/index.0afd4457068384a90cc8.js"></script></body>
 </html>
 
 
